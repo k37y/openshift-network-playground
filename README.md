@@ -25,7 +25,7 @@ The OpenShift Network Playground is both web-based and cli-based interface built
 - Golang network tools.
 
 ## Prerequisites
-* *### OpenShift cluster manager API token
+* ### OpenShift cluster manager API token
 Copy it from [here](https://console.redhat.com/openshift/token/show).
 
 * ### Machine
