@@ -88,13 +88,13 @@ update-repo:
 		popd && \
 		popd
 	@echo -e "${ORANGE}Patching manifest.yaml with releasever ...${NOCOLOR}"
-	sed -i "s/releasever.*/${RELEASEVER}/" manifest.yaml
+	sed -i.bkp "s/releasever.*/${RELEASEVER}/" manifest.yaml
 	@echo -e "${ORANGE}Including python3 and python3-libs in manifests/fedora-coreos.yaml ...${NOCOLOR}"
-	sed -i 's/^  - python3/#&/' manifests/fedora-coreos.yaml
+	sed -i.bkp 's/^  - python3/#&/' manifests/fedora-coreos.yaml
 	@echo -e "${ORANGE}Patching grub.cfg and isolinux.cfg ...${NOCOLOR}"
-	sed -i 's/Fedora CoreOS (Live)/OpenShift Network Playground/g' live/EFI/fedora/grub.cfg
-	sed -i 's/title Fedora CoreOS/title OpenShift Network Playground/g' live/isolinux/isolinux.cfg
-	sed -i 's#label ^Fedora CoreOS (Live)#label ^Autoinstall on /dev/sda#g' live/isolinux/isolinux.cfg
+	sed -i.bkp 's/Fedora CoreOS (Live)/OpenShift Network Playground/g' live/EFI/fedora/grub.cfg
+	sed -i.bkp 's/title Fedora CoreOS/title OpenShift Network Playground/g' live/isolinux/isolinux.cfg
+	sed -i.bkp 's#label ^Fedora CoreOS (Live)#label ^Autoinstall on /dev/sda#g' live/isolinux/isolinux.cfg
 
 .PHONY: cosa-init
 
